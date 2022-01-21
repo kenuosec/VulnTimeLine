@@ -1,0 +1,203 @@
+﻿
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>2020Timeline</title>
+<style>
+
+body {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 5%;
+  font-size: 100%;
+  font-family: "Noto Sans", sans-serif;
+  color: #eee9dc;
+  background: #48b379;
+}
+
+h2 {
+  margin: 3em 0 0 0;
+  font-size: 1.5em;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+/* -------------------------------------
+ * timeline
+ * ------------------------------------- */
+#timeline {
+  list-style: none;
+  margin: 50px 0 30px 120px;
+  padding-left: 30px;
+  border-left: 8px solid #eee9dc;
+}
+#timeline li {
+  margin: 40px 0;
+  position: relative;
+}
+#timeline p {
+  margin: 0 0 15px;
+}
+
+.date {
+  margin-top: -10px;
+  top: 50%;
+  left: -158px;
+  font-size: 0.95em;
+  line-height: 20px;
+  position: absolute;
+}
+
+.circle {
+  margin-top: -10px;
+  top: 50%;
+  left: -44px;
+  width: 10px;
+  height: 10px;
+  background: #48b379;
+  border: 5px solid #eee9dc;
+  border-radius: 50%;
+  display: block;
+  position: absolute;
+}
+
+.content {
+  max-height: 20px;
+  padding: 50px 20px 0;
+  border-color: transparent;
+  border-width: 2px;
+  border-style: solid;
+  border-radius: 0.5em;
+  position: relative;
+}
+.content:before, .content:after {
+  content: "";
+  width: 0;
+  height: 0;
+  border: solid transparent;
+  position: absolute;
+  pointer-events: none;
+  right: 100%;
+}
+.content:before {
+  border-right-color: inherit;
+  border-width: 20px;
+  top: 50%;
+  margin-top: -20px;
+}
+.content:after {
+  border-right-color: #48b379;
+  border-width: 17px;
+  top: 50%;
+  margin-top: -17px;
+}
+.content p {
+  max-height: 0;
+  color: transparent;
+  text-align: justify;
+  word-break: break-word;
+  hyphens: auto;
+  overflow: hidden;
+}
+
+label {
+  font-size: 1.3em;
+  position: absolute;
+  z-index: 100;
+  cursor: pointer;
+  top: 20px;
+  transition: transform 0.2s linear;
+}
+
+.radio {
+  display: none;
+}
+
+.radio:checked + .relative label {
+  cursor: auto;
+  transform: translateX(42px);
+}
+.radio:checked + .relative .circle {
+  background: #f98262;
+}
+.radio:checked ~ .content {
+  max-height: 180px;
+  border-color: #eee9dc;
+  margin-right: 20px;
+  transform: translateX(20px);
+  transition: max-height 0.4s linear, border-color 0.5s linear, transform 0.2s linear;
+}
+.radio:checked ~ .content p {
+  max-height: 200px;
+  color: #eee9dc;
+  transition: color 0.3s linear 0.3s;
+}
+
+/* -------------------------------------
+ * mobile phones (vertical version only)
+ * ------------------------------------- */
+@media screen and (max-width: 767px) {
+  #timeline {
+    margin-left: 0;
+    padding-left: 0;
+    border-left: none;
+  }
+  #timeline li {
+    margin: 50px 0;
+  }
+
+  label {
+    width: 85%;
+    font-size: 1.1em;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    display: block;
+    transform: translateX(18px);
+  }
+
+  .content {
+    padding-top: 45px;
+    border-color: #eee9dc;
+  }
+  .content:before, .content:after {
+    border: solid transparent;
+    bottom: 100%;
+  }
+  .content:before {
+    border-bottom-color: inherit;
+    border-width: 17px;
+    top: -16px;
+    left: 50px;
+    margin-left: -17px;
+  }
+  .content:after {
+    border-bottom-color: #48b379;
+    border-width: 20px;
+    top: -20px;
+    left: 50px;
+    margin-left: -20px;
+  }
+  .content p {
+    font-size: 0.9em;
+    line-height: 1.4;
+  }
+
+  .circle, .date {
+    display: none;
+  }
+}
+</style>
+
+</head>
+<body translate="no">
+<h2>2020年漏洞爆发时间轴</h2>
+<ul id='timeline'>
+
+
+
+
+
+<li class='work'><input class='radio' id='work1000' name='works' type='radio'><div class="relative"><label for='work1000'> 深信服SSL VPN命令注入漏洞</label><span class='date'>2020-12-30</span><span class='circle'></span></div><div class='content'><p>深信服SSL VPN产品的某接口中url参数存在注入漏洞，攻击者可利用该漏洞获取SSL VPN设备的控制权限。建议相关用户及时将深信服 SSL VPN 升级到最新版本。</p></div></li><li class='work'><input class='radio' id='work999' name='works' type='radio'><div class="relative"><label for='work999'> SolarWinds Orion API 远程代码执行漏洞（CVE-...</label><span class='date'>2020-12-29</span><span class='circle'></span></div><div class='content'><p>近期 SolarWinds 发布安全漏洞通告，在报告中指出其产品中存在一处远程代码执行漏洞。攻击者通过构造恶意URI，可以绕过API身份验证，从而利用API功能造成远程代...</p></div></li><li class='work'><input class='radio' id='work998' name='works' type='radio'><div class="relative"><label for='work998'> Nexus Repository Manager 3 XML外部实体注入...</label><span class='date'>2020-12-16</span><span class='circle'></span></div><div class='content'><p>近日，Nexus Repository Manager 3发布了xml外部实体注入漏洞公告，该漏洞使具有NXRM配置权限的攻击者能够以一种方式配置系统，使他们可以查看文件系统上的文件...</p></div></li><li class='work'><input class='radio' id='work997' name='works' type='radio'><div class="relative"><label for='work997'> Apache Struts远程代码执行漏洞（S2-061/CVE-2...</label><span class='date'>2020-12-08</span><span class='circle'></span></div><div class='content'><p>Apache Struts2框架是一个用于开发Java EE网络应用程序的Web框架。Apache Struts于2020年12月08日披露 S2-061 Struts 远程代码执行漏洞（CVE-2020-17530），在使...</p></div></li><li class='work'><input class='radio' id='work996' name='works' type='radio'><div class="relative"><label for='work996'> Drupal 远程代码执行漏洞（CVE-2020-13671）</label><span class='date'>2020-11-19</span><span class='circle'></span></div><div class='content'><p>近日 Drupal官方发布安全更新，修复了 CVE-2020-13671 Drupal 远程代码执行漏洞。由于Drupal core 没有正确地处理上传文件中的某些文件名，攻击者通过上传恶意文...</p></div></li><li class='work'><input class='radio' id='work995' name='works' type='radio'><div class="relative"><label for='work995'> Apache Unomi 远程代码执行漏洞（CVE -2020-13...</label><span class='date'>2020-11-18</span><span class='circle'></span></div><div class='content'><p>Apache Unomi允许远程攻击者使用可能包含任意类的MVEL和OGNL表达式发送恶意请求，从而产生具有Unomi应用程序特权的远程代码执行（RCE）。目前互联网上已经公布漏...</p></div></li><li class='work'><input class='radio' id='work994' name='works' type='radio'><div class="relative"><label for='work994'> 思科安全管理器反序列化漏洞（CVE-2020-27131...</label><span class='date'>2020-11-18</span><span class='circle'></span></div><div class='content'><p>Cisco Security Manager使用的Java反序列化功能中的多个漏洞可能允许未经身份验证的远程攻击者在受影响的设备上执行任意命令。这些漏洞是由于受影响的软件不安全...</p></div></li><li class='work'><input class='radio' id='work993' name='works' type='radio'><div class="relative"><label for='work993'> Citrix XenMobile 目录遍历漏洞（CVE-2020-820...</label><span class='date'>2020-11-17</span><span class='circle'></span></div><div class='content'><p>近日Citrix官方发布安全更新，修复了包括 CVE-2020-8209 远程命令执行漏洞在内的多个漏洞。XenMobile（Citrix Endpoint Management）存在目录遍历漏洞，攻击者未...</p></div></li><li class='work'><input class='radio' id='work992' name='works' type='radio'><div class="relative"><label for='work992'> XStream <1.4.14 远程代码执行高危漏洞（CVE-2...</label><span class='date'>2020-11-16</span><span class='circle'></span></div><div class='content'><p>XStream是一个常用的Java对象和xml相互转换的工具。2020年11月16日，XStream官方发布安全更新，修复了 CVE-2020-26217 XStream远程代码执行漏洞。攻击者通过构造...</p></div></li><li class='work'><input class='radio' id='work991' name='works' type='radio'><div class="relative"><label for='work991'> SaltStack 远程命令执行漏洞（CVE-2020-16846...</label><span class='date'>2020-11-13</span><span class='circle'></span></div><div class='content'><p>近日SaltStack官方发布安全更新，修复了包括 CVE-2020-16846 远程命令执行漏洞在内的多个漏洞。SaltStack 存在远程命令执行漏洞，攻击者通过构造恶意请求，通过...</p></div></li><li class='work'><input class='radio' id='work990' name='works' type='radio'><div class="relative"><label for='work990'> Apache Shiro 权限绕过漏洞通告（CVE-2020-175...</label><span class='date'>2020-11-02</span><span class='circle'></span></div><div class='content'><p>Shiro 发布了验证绕过高危漏洞的风险通告（CVE-2020-17510）。在使用 Apache Shiro 与 Spring 时，远程攻击者可以发送特制的 HTTP 请求，绕过身份验证过程并获得...</p></div></li><li class='work'><input class='radio' id='work989' name='works' type='radio'><div class="relative"><label for='work989'> Weblogic 登录绕过漏洞（CVE-2020-14750）</label><span class='date'>2020-11-02</span><span class='circle'></span></div><div class='content'><p>2020 年 11 月 2 日，Oracle 发布了Oracle Weblogic Server远程代码执行漏洞补丁（CVE-2020-14750），该漏洞为 CVE-2020-14882 WebLogic console 远程代码执行漏...</p></div></li><li class='work'><input class='radio' id='work988' name='works' type='radio'><div class="relative"><label for='work988'> XXL-JOB API 接口未授权访问致反序列化漏洞</label><span class='date'>2020-10-28</span><span class='circle'></span></div><div class='content'><p>XXL-JOB是一个轻量级分布式任务调度平台。默认情况下XXL-JOB的API接口没有配置认证措施，未授权的攻击者可构造恶意请求，触发反序列化，造成远程执行命令，直接...</p></div></li><li class='work'><input class='radio' id='work987' name='works' type='radio'><div class="relative"><label for='work987'> 禅道开源版文件上传漏洞（CNVD-C-2020-121325...</label><span class='date'>2020-10-26</span><span class='circle'></span></div><div class='content'><p>近日，禅道官网发布了12.4.3版本更新公告，修复了一个文件上传的漏洞，在禅道开源版低于12.4.3版本中存在任意文件读取和任意文件上传漏洞，恶意攻击者（需要登陆...</p></div></li><li class='work'><input class='radio' id='work986' name='works' type='radio'><div class="relative"><label for='work986'> Weblogic 多个远程代码执行漏洞</label><span class='date'>2020-10-21</span><span class='circle'></span></div><div class='content'><p>2020 年 10 月 20 日，Oracle 发布了大量安全补丁，涉及旗下产品（Databa se Server、Weblogic Server、Java SE、MySQL等）的 430 个漏洞。此次修复的漏洞中包括...</p></div></li><li class='work'><input class='radio' id='work985' name='works' type='radio'><div class="relative"><label for='work985'> Adobe Magento 远程代码执行漏洞（CVE-2020-24...</label><span class='date'>2020-10-19</span><span class='circle'></span></div><div class='content'><p>近日 Adobe 官方发布安全公告披露了在 Magento Commerce/Open Source 2.3 以及 2.4 版本中存在 CVE-2020-24407 远程代码执行、CVE-2020-24400 SQL注入等多个漏洞...</p></div></li><li class='work'><input class='radio' id='work984' name='works' type='radio'><div class="relative"><label for='work984'> Shiro & Nexus Repository Manger 2/3 权限验...</label><span class='date'>2020-10-16</span><span class='circle'></span></div><div class='content'><p>Nexus Repository Manger 2 & 3 验证绕过高危漏洞，未经身份验证的用户可以提交特制的 HTTP 请求，这可能会导致身份验证绕过。</p></div></li><li class='work'><input class='radio' id='work983' name='works' type='radio'><div class="relative"><label for='work983'> VMware vCenter未授权任意文件读取</label><span class='date'>2020-10-14</span><span class='circle'></span></div><div class='content'><p>近日，公网中公布了VMware vCenterServer的任意文件读取漏洞以及漏洞利用 POC，攻击者可任意读取用户名和密码，漏洞危害较大，请受影响的用户尽快修复。</p></div></li><li class='work'><input class='radio' id='work982' name='works' type='radio'><div class="relative"><label for='work982'> Apache Solr configset upload文件上传漏洞（C...</label><span class='date'>2020-10-13</span><span class='circle'></span></div><div class='content'><p>2020年10月13日，Apache Solr发布安全更新，其中修复了CVE-2020-13957 Apache Solr configset upload文件上传漏洞。攻击者通过构造特定的请求，成功利用该漏洞可...</p></div></li><li class='work'><input class='radio' id='work981' name='works' type='radio'><div class="relative"><label for='work981'> MyBatis 远程代码执行漏洞（CVE-2020-26945）</label><span class='date'>2020-10-12</span><span class='circle'></span></div><div class='content'><p>2020年10月6日，MyBatis官方发布了MyBatis 3.5.6版本，修复了一个远程代码执行漏洞，该漏洞编号为CVE-2020-26945。在满足以下三个条件的时候，攻击者可以触发远...</p></div></li><li class='work'><input class='radio' id='work980' name='works' type='radio'><div class="relative"><label for='work980'> Zabbix远程执行代码漏洞（CVE-2020-11800）</label><span class='date'>2020-10-09</span><span class='circle'></span></div><div class='content'><p>Zabbix 在 3.0.31 和 3.2 之前，Zabbix Server 2.2.x 和 3.0.x 允许远程攻击者执行任意代码。该漏洞于 2020 年 8 月 10 日披露，漏洞编号为 CVE-2020-11800。</p></div></li><li class='work'><input class='radio' id='work979' name='works' type='radio'><div class="relative"><label for='work979'> Nexus Repository Manager 2 目录穿越漏洞（CV...</label><span class='date'>2020-10-09</span><span class='circle'></span></div><div class='content'><p>2020年10月09日，nexus repository manager 2 发布了 nexus repository manager 2 目录穿越漏洞的风险通告，该漏洞编号为 CVE-2020-15012，漏洞等级：高危，漏洞...</p></div></li><li class='work'><input class='radio' id='work978' name='works' type='radio'><div class="relative"><label for='work978'> Citrix Systems 多款产品存在安全漏洞（CVE-20...</label><span class='date'>2020-09-20</span><span class='circle'></span></div><div class='content'><p>Citrix Systems是一家美国跨国软件公司，提供服务器，应用程序和桌面虚拟化，网络，软件即服务（SaaS）和云计算技术。Citrix产品据称已在全球超过40万个客户中使...</p></div></li><li class='work'><input class='radio' id='work977' name='works' type='radio'><div class="relative"><label for='work977'> Microsoft Exchange远程代码执行漏洞（CVE-202...</label><span class='date'>2020-09-16</span><span class='circle'></span></div><div class='content'><p>2020年09月08日微软发布关于 Microsoft Exchange 远程代码执行漏洞（CVE-2020-16875）漏洞通告，由于对 cmdlet 参数的验证不正确，Microsoft Exchange 服务器中...</p></div></li><li class='work'><input class='radio' id='work976' name='works' type='radio'><div class="relative"><label for='work976'> Apache ActiveMQ远程代码执行漏洞（CVE-2020-1...</label><span class='date'>2020-09-15</span><span class='circle'></span></div><div class='content'><p>Apache ActiveMQ 是最流行的开源，多协议，基于 Java 的消息传递服务器。ActiveMQ 消息中间件中存在一个安全漏洞。攻击者可利用该漏洞执行任意代码。此漏洞形成...</p></div></li><li class='work'><input class='radio' id='work975' name='works' type='radio'><div class="relative"><label for='work975'> Microsoft NetLogon远程特权提升漏洞（CVE-202...</label><span class='date'>2020-09-15</span><span class='circle'></span></div><div class='content'><p>微软在每月的例行补丁日，修复了一个 Windows 严重的 NetLogon 特权提升漏洞。通过 Netlogon 远程协议（MS-NRPC）建立与域控制器连接安全通道时存在漏洞，远程（...</p></div></li><li class='work'><input class='radio' id='work974' name='works' type='radio'><div class="relative"><label for='work974'> Apache Cocoon XML外部实体注入漏洞（CVE-2020...</label><span class='date'>2020-09-12</span><span class='circle'></span></div><div class='content'><p>9月11日 Apache修复了 Apache Cocoon xml外部实体注入漏洞（CVE-2020-11991），这个漏洞与 StreamGenerator 有关，在使用 StreamGenerator 时，代码将解析用户提...</p></div></li><li class='work'><input class='radio' id='work973' name='works' type='radio'><div class="relative"><label for='work973'> PAN-OS远程代码执行漏洞（CVE-2020-2040）通告</label><span class='date'>2020-09-12</span><span class='circle'></span></div><div class='content'><p>Palo Alto Networks（PAN）披露了一个编号为CVE-2020-2040的严重漏洞，CVSS评分为9.8。该漏洞是PAN-OS上的一个缓冲区溢出漏洞，当启用了强制门户或配置了多重身...</p></div></li><li class='work'><input class='radio' id='work972' name='works' type='radio'><div class="relative"><label for='work972'> Apache DolphinScheduler高危漏洞（CVE-2020-1...</label><span class='date'>2020-09-11</span><span class='circle'></span></div><div class='content'><p>Apache DolphinScheduler 是一个分布式去中心化，易扩展的可视化DAG工作流任务调度系统。致力于解决数据处...</p></div></li><li class='work'><input class='radio' id='work971' name='works' type='radio'><div class="relative"><label for='work971'> 用友GRP-u8 命令执行漏洞</label><span class='date'>2020-09-11</span><span class='circle'></span></div><div class='content'><p>用友GRP-U8R10行政事业财务管理软件是用友公司专注于国家电子政务事业，基于云计算技术所推出的新一代产品，是我国行政事业财务领域最专业的政府财务管理软件。...</p></div></li><li class='work'><input class='radio' id='work970' name='works' type='radio'><div class="relative"><label for='work970'> 绿盟UTS综合威胁探针管理员任意登录漏洞</label><span class='date'>2020-09-11</span><span class='circle'></span></div><div class='content'><p>绿盟全流量威胁分析解决方案针对原始流量进行采集和监控，对流量信息进行深度还原、存储、查询和分析，可以及时掌握重要信息系统相关网络安全威胁风险，及时检测...</p></div></li><li class='work'><input class='radio' id='work969' name='works' type='radio'><div class="relative"><label for='work969'> 深信服EDR多个0day漏洞风险通告</label><span class='date'>2020-09-11</span><span class='circle'></span></div><div class='content'><p>深信服终端检测响应平台（EDR）RCE漏洞，攻击者利用该漏洞可远程执行系统命令，获得目标服务器的权限，风险较高。</p></div></li><li class='work'><input class='radio' id='work968' name='works' type='radio'><div class="relative"><label for='work968'> Jackson 多个反序列化安全漏洞（CVE-2020-2461...</label><span class='date'>2020-08-26</span><span class='circle'></span></div><div class='content'><p>Fasterxml jackson-databind 2.9.10.6之前的版本中存在安全漏洞，该漏洞源于进行了不安全的反序列化。远程攻击者可通过精心构造的恶意载荷通过利用该漏洞在系统...</p></div></li><li class='work'><input class='radio' id='work967' name='works' type='radio'><div class="relative"><label for='work967'> 通达OA 多个SQL注入漏洞</label><span class='date'>2020-08-24</span><span class='circle'></span></div><div class='content'><p>通达OA（Office Anywhere网络智能办公系统）是由北京通达信科科技有限公司自主研发的协同办公自动化软件。近日通达 OA11.5 版本又出现多个 sql 注入漏洞，目前互...</p></div></li><li class='work'><input class='radio' id='work966' name='works' type='radio'><div class="relative"><label for='work966'> 宝塔某处未授权访问数据库漏洞</label><span class='date'>2020-08-23</span><span class='circle'></span></div><div class='content'><p>2020年8月23日晚间，宝塔官方紧急推送安全更新，修复了一处在7.4.2版本中的高危漏洞，攻击者可利用此漏洞越权访问数据库，甚至获取服务器权限。</p></div></li><li class='work'><input class='radio' id='work965' name='works' type='radio'><div class="relative"><label for='work965'> 通达OA 多个高危漏洞</label><span class='date'>2020-08-21</span><span class='circle'></span></div><div class='content'><p>近日通达OA官方发布安全更新，其中修复了多个高危漏洞。攻击者通过文件删除漏洞，以及配合早期版本的后台文件上传漏洞，可以获取服务器系统权限。</p></div></li><li class='work'><input class='radio' id='work964' name='works' type='radio'><div class="relative"><label for='work964'> Jenkins Jetty组件漏洞风险通告（CVE-2019-176...</label><span class='date'>2020-08-19</span><span class='circle'></span></div><div class='content'><p>Jenkins 2.224-2.242 和 LTS 2.222.1-2.235.4 中自带的Jetty存在安全漏洞，攻击者可以在未登陆的状态下访问到其他用户的敏感信息。</p></div></li><li class='work'><input class='radio' id='work963' name='works' type='radio'><div class="relative"><label for='work963'> 深信服EDR远程命令执行漏洞（CNVD-2020-46552...</label><span class='date'>2020-08-19</span><span class='circle'></span></div><div class='content'><p>深信服终端检测响应平台是深信服公司开发的一套EDR系统。攻击者利用该漏洞，可向目标服务器发送恶意构造的HTTP请求，从而获得目标服务器的权限，实现远程代码控...</p></div></li><li class='work'><input class='radio' id='work962' name='works' type='radio'><div class="relative"><label for='work962'> Apache Shiro < 1.6.0 权限绕过漏洞（CVE-2020...</label><span class='date'>2020-08-18</span><span class='circle'></span></div><div class='content'><p>Apache Shiro 身份验证绕过漏洞 CVE-2020-11989 的修复补丁存在缺陷，在1.5.3及其之前的版本，依然存在身份校验绕过漏洞（CVE-2020-13933）。2020年8月17日，Apa...</p></div></li><li class='work'><input class='radio' id='work961' name='works' type='radio'><div class="relative"><label for='work961'> Apache Dubbo默认反序列化协议Hessian2导致远...</label><span class='date'>2020-08-17</span><span class='circle'></span></div><div class='content'><p>Apache Dubbo 是一种基于 Java 的高性能 RPC 框架。Apache Dubbo默认反序列化协议Hessian2被曝存在代码执行漏洞，攻击者可利用漏洞构建一个恶意请求达到远程代码...</p></div></li><li class='work'><input class='radio' id='work960' name='works' type='radio'><div class="relative"><label for='work960'> STRUTS S2-059/S2-060安全漏洞（CVE-2019-0230...</label><span class='date'>2020-08-13</span><span class='circle'></span></div><div class='content'><p>Struts官方发布新的安全通告，公布了2个安全漏洞：S2-059（CVE-2019-0230）是一个潜在的远程代码执行漏洞，S2-060（CVE-2019-0233）是一个拒绝服务漏洞。</p></div></li><li class='work'><input class='radio' id='work959' name='works' type='radio'><div class="relative"><label for='work959'> TeamViewer 全系版本曝无需密码即可入侵你电脑...</label><span class='date'>2020-08-10</span><span class='circle'></span></div><div class='content'><p>TeamViewer 官方发布最近修复了一个漏洞，该漏洞可能使攻击者悄悄地建立与您计算机的连接并进一步利用该系统，该漏洞编号为 CVE-2020-13699，CVSS 评分 9.8 分。</p></div></li><li class='work'><input class='radio' id='work958' name='works' type='radio'><div class="relative"><label for='work958'> Nexus Repository Manager 远程代码执行漏洞（...</label><span class='date'>2020-08-01</span><span class='circle'></span></div><div class='content'><p>近日，Sonatype Security Team官方发布了一则关于Nexus Repository Manager 3.x产品的远程代码执行漏洞通告。</p></div></li><li class='work'><input class='radio' id='work957' name='works' type='radio'><div class="relative"><label for='work957'> Cisco ASA 和 Cisco Firepower 未授权读取文件...</label><span class='date'>2020-07-23</span><span class='circle'></span></div><div class='content'><p>2020年7月22日 Cisco 公布了关于 Cisco Adaptive Security Appliance（ASA）防火墙设备以及Cisco Firepower Threat Defense（FTD）设备的 web 管理界面存在未授...</p></div></li><li class='work'><input class='radio' id='work956' name='works' type='radio'><div class="relative"><label for='work956'> Apache Kylin 远程代码执行和SQL注入漏洞</label><span class='date'>2020-07-17</span><span class='circle'></span></div><div class='content'><p>6月，京东安全的蓝军团队发现了一个 apache kylin 远程命令执行严重漏洞（ CVE-2020-13925）。黑客可以利用这个漏洞，登录任何管理员账号和密码默认未修改的账号...</p></div></li><li class='work'><input class='radio' id='work955' name='works' type='radio'><div class="relative"><label for='work955'> Windows DNS Server远程代码执行漏洞</label><span class='date'>2020-07-15</span><span class='circle'></span></div><div class='content'><p>Windows DNS是基础网络组件，通常安装在域控制器上，因此，本次DNS Server远程代码执行漏洞CVE-2020-1350，CVSS评分10，官方将此漏洞归类为可蠕虫攻击漏洞，可能...</p></div></li><li class='work'><input class='radio' id='work954' name='works' type='radio'><div class="relative"><label for='work954'> Weblogic 多个远程代码执行漏洞</label><span class='date'>2020-07-15</span><span class='circle'></span></div><div class='content'><p>2020 年 7 月 14 日，Oracle 发布了大量安全补丁，此次修复的漏洞中包括 8 个和 Weblogic 相关的高危漏洞，CVSS评分均为 9.8，利用难度低，攻击者可借此实现远程...</p></div></li><li class='work'><input class='radio' id='work953' name='works' type='radio'><div class="relative"><label for='work953'> SAP NetWeaver AS Java 高危漏洞</label><span class='date'>2020-07-15</span><span class='circle'></span></div><div class='content'><p>SAP 是 SAP 公司的产品企业管理解决方案的软件名称。SAP官方修复了一个存在于 SAP NetWeaver AS Java（LM配置向导）7.30 至 7.50 版本中的严重漏洞 CVE-2020-628...</p></div></li><li class='work'><input class='radio' id='work952' name='works' type='radio'><div class="relative"><label for='work952'>【安全通报更新】F5 BIG-IP 远程代码执行漏洞被绕过第三次...</label><span class='date'>2020-07-15</span><span class='circle'></span></div><div class='content'><p>2020 年 7 月 8 日，白帽汇安全研究院监测到 F5 官网更新了漏洞公告，使用官方提供的 httpd 配置方案仍然可能造成反序列化代码执行漏洞，因此，官方针对 Locatio...</p></div></li><li class='work'><input class='radio' id='work951' name='works' type='radio'><div class="relative"><label for='work951'> Citrix 修复多个安全漏洞</label><span class='date'>2020-07-11</span><span class='circle'></span></div><div class='content'><p>2020年 7 月 7 日，Citrix 官方发布的漏洞公告中发布了11个漏洞，其中影响较大的漏洞一共有5个，分别为 CVE-2020-8191、CVE-2020-8193、CVE-2020-8194、CVE-2020...</p></div></li><li class='work'><input class='radio' id='work950' name='works' type='radio'><div class="relative"><label for='work950'>【安全通报更新】F5 BIG-IP 远程代码执行漏洞被绕过</label><span class='date'>2020-07-08</span><span class='circle'></span></div><div class='content'><p>2020 年7月8日，F5官网更新了漏洞公告，使用官方提供的 httpd 配置方案仍然可能造成反序列化代码执行漏洞，因此，官方针对 LocationMatch 语句配置强化如下：</p></div></li><li class='work'><input class='radio' id='work949' name='works' type='radio'><div class="relative"><label for='work949'> F5 BIG-IP 远程代码执行漏洞</label><span class='date'>2020-07-03</span><span class='circle'></span></div><div class='content'><p>F5 BIG-IP 是美国 F5 公司的一款集成了网络流量管理、应用程序安全管理、负载均衡等功能的应用交付平台。攻击者可利用该漏洞执行任意的系统命令、创建或删除文件...</p></div></li><li class='work'><input class='radio' id='work948' name='works' type='radio'><div class="relative"><label for='work948'> Apache Guacamole RDP 远程代码执行漏洞</label><span class='date'>2020-07-03</span><span class='circle'></span></div><div class='content'><p>Apache Guacamole 是一款无客户端的远程桌面网关，它支持 VNC、RDP 和 SSH 等标准协议，近日，Apache Guacamole 官方发布了风险通告，其中包含了 CVE-2020-9498...</p></div></li><li class='work'><input class='radio' id='work947' name='works' type='radio'><div class="relative"><label for='work947'>【安全通报更新】Apache Dubbo CVE-2020-1948 补丁可绕过风...</label><span class='date'>2020-07-01</span><span class='circle'></span></div><div class='content'><p>近期 Apache Dubbo 披露了 Provider 默认反序列化远程代码执行漏洞（CVE-2020-1948），攻击者可构造恶意请求执行任意代码。6 月 29 日白帽汇安全研究院发现 Apac...</p></div></li><li class='work'><input class='radio' id='work946' name='works' type='radio'><div class="relative"><label for='work946'> SAML身份验证中的身份验证绕过漏洞</label><span class='date'>2020-06-30</span><span class='circle'></span></div><div class='content'><p>2020 年 06 月 29 日， 白帽汇安全研究院监测发现 Palo Alto 官方发布了 SAML 身份验证机制绕过的风险通告，SAML 身份验证机制存在身份验证绕过的威胁，该漏洞编...</p></div></li><li class='work'><input class='radio' id='work945' name='works' type='radio'><div class="relative"><label for='work945'> fastjson 远程代码执行漏洞</label><span class='date'>2020-06-30</span><span class='circle'></span></div><div class='content'><p>近日，白帽汇安全研究院监测到 fastjson 官方发布新版本，修补了一个反序列化远程代码执行漏洞。远程攻击者可利用该漏洞绕过 autoType 限制，进而可在目标服务器...</p></div></li><li class='work'><input class='radio' id='work944' name='works' type='radio'><div class="relative"><label for='work944'>【安全通报更新】Apache Dubbo CVE-2020-1948 补丁可绕过风...</label><span class='date'>2020-06-30</span><span class='circle'></span></div><div class='content'><p>6 月 29 日白帽汇安全研究院发现 Apache Dubbo 的 GitHub 上有一个新的 Pull Request 称修复了2.7.7版本的绕过。鉴于该漏洞影响较大，建议客户尽快自查修复。</p></div></li><li class='work'><input class='radio' id='work943' name='works' type='radio'><div class="relative"><label for='work943'> Tomcat 拒绝服务漏洞</label><span class='date'>2020-06-29</span><span class='circle'></span></div><div class='content'><p>Tomcat是Apache 软件基金会（Apache Software Foundation）的Jakarta 项目中的一个核心项目，由Apache、Sun...</p></div></li><li class='work'><input class='radio' id='work942' name='works' type='radio'><div class="relative"><label for='work942'> Apache Spark 远程代码执行漏洞</label><span class='date'>2020-06-24</span><span class='circle'></span></div><div class='content'><p>Apache Spark 是专为大规模数据处理而设计的快速通用的计算引擎。Apache Spark的独立资源管理器的主服务器可以通过配置共享密钥进行认证，但是在认证启用之后，...</p></div></li><li class='work'><input class='radio' id='work941' name='works' type='radio'><div class="relative"><label for='work941'> Apache Shiro身份验证绕过漏洞</label><span class='date'>2020-06-24</span><span class='circle'></span></div><div class='content'><p>近日，白帽汇安全研究院监测到 Apache Shiro 披露了一个身份验证绕过漏洞。当 Apache Shiro 与 Spring Dynamic Controllers 一起使用时，远程攻击者可以通过构造...</p></div></li><li class='work'><input class='radio' id='work940' name='works' type='radio'><div class="relative"><label for='work940'> Apache Dubbo Provider默认反序列化远程代码执...</label><span class='date'>2020-06-23</span><span class='circle'></span></div><div class='content'><p>Apache Dubbo 是一种基于 Java 的高性能 RPC 框架。Dubbo 2.7.6 或更低版本存在反序列化代码执行漏洞，攻击者可以发送不存在的服务名或方法名的 RPC 请求，同时...</p></div></li><li class='work'><input class='radio' id='work939' name='works' type='radio'><div class="relative"><label for='work939'> Apache SkyWalking SQL注入漏洞</label><span class='date'>2020-06-22</span><span class='circle'></span></div><div class='content'><p>近日，监测到Apache SkyWalking发布更新修复了一个SQL注入漏洞。远程攻击者可以通过Apache SkyWalking默认开放的未授权GraphQL接口构造恶意请求包进行注入，成功...</p></div></li><li class='work'><input class='radio' id='work938' name='works' type='radio'><div class="relative"><label for='work938'> Apache Kylin 远程代码执行漏洞</label><span class='date'>2020-06-02</span><span class='circle'></span></div><div class='content'><p>2020年5月28日，Apache Kylin官方发布安全公告，披露了一个Apache Kylin远程代码执行漏洞。Kylin有一些restful API，可以将os命令与用户输入字符串连接起来，攻...</p></div></li><li class='work'><input class='radio' id='work937' name='works' type='radio'><div class="relative"><label for='work937'> Fastjson 远程代码执行漏洞</label><span class='date'>2020-05-30</span><span class='circle'></span></div><div class='content'><p>近日，白帽汇安全研究院监测到，Fastjson < 1.2.69 版本存在远程代码执行漏洞，可直接获取到服务器权限。该漏洞利用门槛低，风险影响范围较大，强烈建议使用了 F...</p></div></li><li class='work'><input class='radio' id='work936' name='works' type='radio'><div class="relative"><label for='work936'> Apache Tomcat Session 反序列化代码执行漏洞...</label><span class='date'>2020-05-21</span><span class='circle'></span></div><div class='content'><p>2020年5月20日，Apache Tomcat官方发布安全公告，披露了一个通过持久化Session可能导致远程代码执行的漏洞CVE-2020-9484。</p></div></li><li class='work'><input class='radio' id='work935' name='works' type='radio'><div class="relative"><label for='work935'> SaltStack远程命令执行漏洞（CVE-2020-11651、...</label><span class='date'>2020-05-06</span><span class='circle'></span></div><div class='content'><p>2020年5月3日，阿里云应急响应中心监测到近日国外某安全团队披露了SaltStack存在认证绕过致命令执行漏洞以及目录遍历漏洞。SaltStack 是基于 Python 开发的一套C...</p></div></li><li class='work'><input class='radio' id='work934' name='works' type='radio'><div class="relative"><label for='work934'> Juniper HTTP/HTTPS 服务高危漏洞（CVE-2020-1...</label><span class='date'>2020-04-30</span><span class='circle'></span></div><div class='content'><p>近日，Juniper 官方发布了 Junos OS 设备基于 HTTP/HTTPS 和 J-Web 服务存在本地文件包含、命令注入等安全漏洞公告（CVE-2020-1631）。</p></div></li><li class='work'><input class='radio' id='work933' name='works' type='radio'><div class="relative"><label for='work933'> 通达OA前台任意用户伪造登录漏洞</label><span class='date'>2020-04-21</span><span class='circle'></span></div><div class='content'><p>2020年04月17日, 通达OA官方在更新了一个v11版本安全补丁, 其中修复了一个任意用户伪造登录漏洞。未经授权的远程攻击者可以通过精心构造的请求包进行任意用户伪...</p></div></li><li class='work'><input class='radio' id='work932' name='works' type='radio'><div class="relative"><label for='work932'> Git凭证泄露漏洞（CVE-2020-5260）</label><span class='date'>2020-04-17</span><span class='circle'></span></div><div class='content'><p>4月15日，Git 发布安全通告公布了一个导致Git用户凭证泄露的漏洞（CVE-2020-5260）。Git使用凭证助手(credential helper)来帮助用户存储和检索凭证。当 URL 中包...</p></div></li><li class='work'><input class='radio' id='work931' name='works' type='radio'><div class="relative"><label for='work931'> Weblogic 修复多个远程代码执行漏洞</label><span class='date'>2020-05-23</span><span class='circle'></span></div><div class='content'><p>2020 年 4 月 14 日，Oracle 发布了大量安全补丁，涉及旗下产品的 397 个漏洞。此次修复的漏洞中包括 6 个和 Weblogic 相关的高危漏洞，CVSS评分均为 9.8，利用...</p></div></li><li class='work'><input class='radio' id='work930' name='works' type='radio'><div class="relative"><label for='work930'> WebSphere 远程代码执行漏洞</label><span class='date'>2020-04-14</span><span class='circle'></span></div><div class='content'><p>CVE-2020-4276 和 CVE-2020-4362 是由长亭科技安全研究员Noxxx 发现的存在于 WebSphere SOAP Connector 服务中的远程代码执行漏洞。远程且未经授权的攻击者通过...</p></div></li><li class='work'><input class='radio' id='work929' name='works' type='radio'><div class="relative"><label for='work929'> Liferay Portal中的RCE漏洞</label><span class='date'>2020-03-26</span><span class='circle'></span></div><div class='content'><p>近期，白帽汇安全研究院观察到国外安全研究团队Code White公开了在Liferay Portal中发现的和JSON反序列化有关的高危漏洞，影响了6.1，6.2,，7.0，7.1，7.2版本。...</p></div></li><li class='work'><input class='radio' id='work928' name='works' type='radio'><div class="relative"><label for='work928'> Adobe Type 1字体解析漏洞引发的远程代码执行</label><span class='date'>2020-03-24</span><span class='circle'></span></div><div class='content'><p>近日，微软官方发布了一份安全通报，表示检测到网络中有攻击者使用了Adobe Type Manager Library中0day漏洞，进行远程代码执行攻击。由于尚未发布补丁，因此特意...</p></div></li><li class='work'><input class='radio' id='work927' name='works' type='radio'><div class="relative"><label for='work927'> Fastjson发布高危漏洞补丁</label><span class='date'>2020-03-23</span><span class='circle'></span></div><div class='content'><p>近日，Fastjson官方发布了1.2.67版本，修复了之前旧版本存在的autoType黑名单类绕过漏洞，可导致远程攻击者进行RCE攻击。在不久之前，同类产品Fasterxml jackson...</p></div></li><li class='work'><input class='radio' id='work926' name='works' type='radio'><div class="relative"><label for='work926'>Adobe ColdFusion 任意文件读取和任意文件包含漏洞</label><span class='date'>2020-03-19</span><span class='circle'></span></div><div class='content'><p>近日，Adobe官方发布了针对Adobe Coldfusion的安全更新补丁。其中包含从Coldfusion安装目录中读取任意文件的CVE-2020-3761远程文件读取；以及能从webroot或者根...</p></div></li><li class='work'><input class='radio' id='work925' name='works' type='radio'><div class="relative"><label for='work925'> 趋势科技修复旗下产品多个严重漏洞</label><span class='date'>2020-03-18</span><span class='circle'></span></div><div class='content'><p>近日，著名安全公司趋势科技发布漏洞警报，公开了旗下产品中的五个漏洞（主要影响Apex One和OfficeScan XG企业安全产品），其中两个漏洞已被趋势科技发现有在公...</p></div></li><li class='work'><input class='radio' id='work924' name='works' type='radio'><div class="relative"><label for='work924'> 通达OA任意文件上传配合文件包含导致的RCE</label><span class='date'>2020-03-19</span><span class='circle'></span></div><div class='content'><p>近日，有安全研究人员对外表示（亚信安全），前几日通达OA官方在其官方论坛披露了通达OA用户服务器遭受勒索病毒攻击事件其实和某个0day漏洞有关。漏洞类型为任意...</p></div></li><li class='work'><input class='radio' id='work923' name='works' type='radio'><div class="relative"><label for='work923'> VMware修复了Workstation和Fusion中的严重漏洞</label><span class='date'>2020-03-14</span><span class='circle'></span></div><div class='content'><p>近日，VMware发布了安全通报，表示已修复旗下产品的三个漏洞，其中包括Workstation和Fusion中从虚拟机向宿主机执行代码的严重漏洞CVE-2020-3947（其余两个漏洞和...</p></div></li><li class='work'><input class='radio' id='work922' name='works' type='radio'><div class="relative"><label for='work922'> Apache ShardingSphere远程代码执行漏洞</label><span class='date'>2020-03-10</span><span class='circle'></span></div><div class='content'><p>近日，白帽汇安全研究院发现网络中公布了影响Apache ShardingSphere的高危漏洞，由奇安信的国内安全研究人员发现的。</p></div></li><li class='work'><input class='radio' id='work921' name='works' type='radio'><div class="relative"><label for='work921'> Zoho企业管理产品曝出高危漏洞</label><span class='date'>2020-03-09</span><span class='circle'></span></div><div class='content'><p>近日，有安全研究人员在Twitter上发布了Zoho企业产品Zoho ManageEngine Desktop Central中的高危漏洞，可导致未经身份验证的攻击者在设备上以root权限直接执行命...</p></div></li><li class='work'><input class='radio' id='work920' name='works' type='radio'><div class="relative"><label for='work920'> PPP协议曝出高危RCE漏洞</label><span class='date'>2020-03-07</span><span class='circle'></span></div><div class='content'><p>近日，US-CERT向用户发出警告，PPP daemon软件存在一个17年历史的远程执行代码漏洞。该漏洞会影响几乎所有基于Linux的操作系统的PPP daemon软件（而且和众多网络...</p></div></li><li class='work'><input class='radio' id='work919' name='works' type='radio'><div class="relative"><label for='work919'> Google Chrome中的RCE漏洞</label><span class='date'>2020-03-05</span><span class='circle'></span></div><div class='content'><p>Google Chrome是全球知名的浏览器，而在上个月谷歌公布了和Chrome有关的编号为CVE-2020-6418的RCE漏洞，影响了80.0.3987.122版本之前的Chrome。</p></div></li><li class='work'><input class='radio' id='work918' name='works' type='radio'><div class="relative"><label for='work918'> Jackson-databind再修复两个RCE漏洞</label><span class='date'>2020-03-02</span><span class='circle'></span></div><div class='content'><p>3月1日，Fasterxml jackson-databind官方披露了两个RCE漏洞。Fasterxml jackson-databind是一个简单基于Java应用库，主要用于对象转换，可将Java对象转换成json...</p></div></li><li class='work'><input class='radio' id='work917' name='works' type='radio'><div class="relative"><label for='work917'>CVE-2020-8840：Jackson-databind远程命令执行漏洞（或影响...</label><span class='date'>2020-02-21</span><span class='circle'></span></div><div class='content'><p>2月19日，NVD披露了Fasterxm l jackson-databind的远程代码执行漏洞。</p></div></li><li class='work'><input class='radio' id='work916' name='works' type='radio'><div class="relative"><label for='work916'>CVE-2019-17564：Apache Dubbo反序列化漏洞</label><span class='date'>2020-02-18</span><span class='circle'></span></div><div class='content'><p>近日，Apache公布了旗下Apache Dubbo的反序列化漏洞，Apache Dubbo是一款高性能、轻量级的开源Java RPC框架，它提供了三大核心能力：面向接口的远程方法调用，智...</p></div></li>
